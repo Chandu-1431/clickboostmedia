@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Boost Media | 24/7 Premier Digital Agency</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0a66c2; 
+            --accent: #f8941d;  
+            --midnight: #050a10; 
+            --success: #22c55e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(10, 102, 194, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(248, 148, 29, 0.1) 0px, transparent 50%);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Floating 24/7 Badge --- */
+        .live-badge {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 2000;
+            font-weight: 800;
+            font-size: 0.85rem;
+            border: 2px solid var(--success);
+            text-decoration: none;
+            color: var(--midnight);
+        }
+
+        .pulse-dot {
+            height: 10px; width: 10px;
+            background-color: var(--success);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-logo img { height: 50px; mix-blend-mode: multiply; }
+
+        nav div a {
+            color: var(--midnight);
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, #003a70 0%, #0a66c2 50%, #f8941d 100%);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo-badge {
+            background: white;
+            width: 170px; height: 170px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .logo-badge img { width: 85%; mix-blend-mode: multiply; }
+
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; }
+
+        /* --- Services --- */
+        .section-padding { padding: 100px 20px; text-align: center; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 50px 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            transition: 0.4s;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(10, 102, 194, 0.1);
+        }
+
+        .service-card h3 { color: var(--primary); margin-bottom: 15px; }
+
+        /* --- Updated Director Section with Impressive Bio --- */
+        .about-section {
+            background: white;
+            padding: 100px 20px;
+            margin: 50px 0;
+            border-radius: 60px;
+        }
+
+        .about-flex {
+            display: flex; align-items: center; justify-content: center;
+            gap: 60px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto;
+        }
+
+        .md-img {
+            width: 320px; height: 420px;
+            border-radius: 30px; object-fit: cover;
+            box-shadow: 30px 30px 0px var(--accent);
+        }
+
+        .about-content { max-width: 600px; text-align: left; }
+        .about-content h2 { font-size: 3rem; color: var(--midnight); margin-bottom: 15px; }
+
+        .director-quote {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .director-bio {
+            color: #4b5563;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
+        /* --- Contact --- */
+        .contact-box {
+            background: var(--midnight);
+            color: white;
+            padding: 80px 40px;
+            border-radius: 40px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 80px auto;
+        }
+
+        .contact-box a { color: var(--accent); text-decoration: none; font-weight: 800; font-size: 1.4rem; }
+
+        footer { padding: 40px; text-align: center; color: #64748b; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .md-img { width: 100%; height: auto; box-shadow: none; }
+            .about-content { text-align: center; }
+            nav { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floater -->
+<a href="https://wa.me" class="live-badge">
+    <span class="pulse-dot"></span> 24/7 PRIORITY SUPPORT ACTIVE
+</a>
+
+<nav>
+    <div class="nav-logo">
+        <img src="C:\Users\chand\Downloads\WhatsApp Image 2026-03-17 at 6.39.22 PM.jpeg" alt="Logo">
+    </div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">Director</a>
+        <a href="#contact">Consult</a>
+    </div>
+</nav>
+
+<section id="home" class="hero">
+    <div class="logo-badge">
+        <img src="C:\Users\chand\Downloads\WhatsApp Image 2026-03-17 at 6.39.22 PM.jpeg" alt="Logo">
+    </div>
+    <h1>We Boost Your Business 24/7 🚀</h1>
+    <p>Strategic Digital Dominance Led by Alladi Chandu.</p>
+</section>
+
+<!-- Services -->
+<section id="services" class="section-padding">
+    <h6 style="color: var(--accent); font-weight: 800; letter-spacing: 3px; text-transform: uppercase;">Our Expertise</h6>
+    <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--midnight);">Solutions for Growth</h2>
+    
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>SEO Mastery</h3>
+            <p>We build long-term search authority that drives consistent, high-value organic revenue 24/7.</p>
+        </div>
+        <div class="service-card">
+            <h3>Paid Media</h3>
+            <p>Precision-targeted Google and Meta campaigns engineered for maximum ROI and market dominance.</p>
+        </div>
+        <div class="service-card">
+            <h3>Web Engineering</h3>
+            <p>Modern, conversion-optimized web architecture built to transform visitors into lifetime customers.</p>
+        </div>
+        <div class="service-card">
+            <h3>Social Authority</h3>
+            <p>Establish industry leadership through data-backed content strategies that drive massive brand growth.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Updated Director Section for Maximum Impression -->
+<section id="about" class="about-section">
+    <div class="about-flex">
+        <img src="C:\Users\chand\Downloads\WhatsApp Image 2026-03-17 at 6.27.03 PM.jpeg" alt="Alladi Chandu" class="md-img">
+        <div class="about-content">
+            <h6 style="color: var(--accent); letter-spacing: 3px; font-weight: 800; margin-bottom: 5px;">FOUNDER & MANAGING DIRECTOR</h6>
+            <h2>Alladi Chandu</h2>
+            
+            <p class="director-quote">
+                "Our mission is to bridge the gap between business potential and digital reality through high-performance ROI and absolute transparency."
+            </p>
+            
+            <p class="director-bio">
+                As the driving force behind <strong>Click Boost Media</strong>, <strong>Alladi Chandu</strong> is a visionary marketing strategist dedicated to helping brands scale in the digital age. With a deep focus on <strong>data-driven results</strong>, he has successfully led over 50+ brands to record-breaking revenue growth. 
+            </p>
+
+            <p class="director-bio">
+                He believes that in the fast-paced world of digital marketing, <strong>consistency and availability</strong> are key. This is why he personally oversees our 24/7 priority support ecosystem, ensuring that every partner receives elite-level attention and measurable profit.
+            </p>
+
+            <div style="display: flex; gap: 40px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+                <div><h3 style="color:var(--primary); margin:0;">50+</h3><p style="margin:0; opacity: 0.7;">Brands Scaled</p></div>
+                <div><h3 style="color:var(--primary); margin:0;">200%</h3><p style="margin:0; opacity: 0.7;">Avg ROI Boost</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" style="padding: 0 20px;">
+    <div class="contact-box">
+        <h2>Ready to Work with Alladi Chandu?</h2>
+        <p>Book your 24/7 priority strategy session today.</p>
+        <br>
+        <p>📧 <a href="mailto:infoclickboostmedia@gmail.com">infoclickboostmedia@gmail.com</a></p>
+        <p>📞 <a href="tel:+918142843897">+91 8142843897</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Click Boost Media. All Rights Reserved. | Hyderabad, India</p>
+</footer>
+
+</body>
+</html>
